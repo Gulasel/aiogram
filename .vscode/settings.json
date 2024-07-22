@@ -1,0 +1,4 @@
+{
+    "notebook.showCellStatusBar": "visibleAfterExecute",
+    "debug.showInStatusBar": "always"
+}
