@@ -19,11 +19,11 @@ async def guess_number(message: types.Message):
     
     if user_guess == secret_number:
         await message.reply(f"Правильно! Вы отгадали число {secret_number}!")
-        # Send 'You win nothing' image
+       
         await message.answer_photo('https://media.makeameme.org/created/you-win-nothing-b744e1771f.jpg')
     else:
         await message.reply(f"Вы не угадали. Я загадал число {secret_number}.")
-        # Send 'Sorry, you lose' image
+        
         await message.answer_photo('https://media.makeameme.org/created/sorry-you-lose.jpg')
         
         
