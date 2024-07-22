@@ -13,6 +13,7 @@ async def start(message:types.Message):
     
     
 @dp.message_handler(lambda message: message.text.isdigit() and int(message.text) in [1, 2, 3])
+
 async def guess_number(message: types.Message):
     user_guess = int(message.text)
     secret_number = random.randint(1, 3)
