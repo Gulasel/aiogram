@@ -10,7 +10,7 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands='start')
 async def start(message:types.Message):
     await message.answer("Привет, Я загадал число от 1 до 3. Попробуйте угадать! ")
-    
+   
     
 @dp.message_handler(lambda message: message.text.isdigit() and int(message.text) in [1, 2, 3])
 
@@ -29,5 +29,22 @@ async def guess_number(message: types.Message):
         
         
 executor.start_polling(dp)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

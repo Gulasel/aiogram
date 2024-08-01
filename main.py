@@ -1,12 +1,13 @@
-from aiogram import Bot, Dispatcher, types, executor
+from aiogram import Bot, Dispatcher, types, executor #-  телеграм мн байланыш учун айограм библ колдонобуз,aiogram -  асинхронно фукнкция
 
-bot = Bot(token='7011991566:AAFJreIBegl5nvCbIN8HaVtENBi56zau9Sk')
-dp = Dispatcher(bot)
+bot = Bot(token='7011991566:AAFJreIBegl5nvCbIN8HaVtENBi56zau9Sk') # бул жон эле текшерет барбы же жокпу
+dp = Dispatcher(bot) # эгерде токен бар болсо анда диспатчер иштей баштайт,#dp-диспатчер это обработчик запроса
 
-@dp.message_handler(commands='start')
-async def start(message:types.Message):
-    await message.answer("Привет, Дорогоя Гуласел !")
-    
+@dp.message_handler(commands='start') # дикератор  message_handler-сообщенияны обработка кылат
+async def start(message:types.Message): # асинхронно это - бир эле убакта запрос жиберип иштете берсек болот
+    await message.answer("Привет студент !") # message - сообщениядарды обработка кылат
+    #await жок болсо хелпти жаза адбайт элек себеби ал кутот
+  
 @dp.message_handler(commands='help')
 async def help(message:types.Message):
     await message.answer("Чем могу помочь ?")
@@ -30,6 +31,6 @@ async def location(message:types.Message):
     
 @dp.message_handler(commands='contact')
 async def contact(message:types.Message):
-    await message.answer_contact(last_name='Gulasel', first_name='Kamalova ', phone_number=+996500232632)
+    await message.answer_contact(last_name='Gulasel', first_name='Kamalova', phone_number=+996500232632)
       
 executor.start_polling(dp)

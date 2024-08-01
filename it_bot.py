@@ -1,10 +1,10 @@
-from aiogram import Bot, Dispatcher, types, executor
+from aiogram import Bot, Dispatcher, types, executor #  импортировать этебиз 
 from config import token
 from logging import basicConfig, INFO
 
 bot = Bot(token=token)
 dp = Dispatcher(bot)
-basicConfig(level=INFO)
+basicConfig(level=INFO) # статус нашего кода , терминалга информация чыгарып берет
 
 start_buttons = [
     types.KeyboardButton('О нас'),
@@ -13,7 +13,7 @@ start_buttons = [
     types.KeyboardButton('Контакты'),
 ]
 
-start_keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True).add(*start_buttons)
+start_keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True).add(*start_buttons)  #resize  бул кнопканын размери
 
 @dp.message_handler(commands='start')
 async def start(message:types.Message):
@@ -22,18 +22,18 @@ async def start(message:types.Message):
 @dp.message_handler(text='О нас')
 async def about_us(message:types.Message):
     await message.reply("Itpark - это IT-курсы в Оше по разным направлениям")
-    
+
 @dp.message_handler(text='Адрес')
 async def send_adress(message:types.Message):
     await message.reply("Наш адрес: Город Ош, 194-224 Курманжан-Датка ул ")    
     await message.reply_location(40.521534, 72.799456)
-    
+
 @dp.message_handler(text='Контакты')
 async def contact(message:types.Message):
     await message.answer(f'{message.from_user.full_name}, вот нащи контакты: ')
     await message.answer_contact("+996505180600", "Islam", "Bolsunbekovich")
     await message.answer_contact("+996222226070", "Eliza", "Erkinbek kyzy")
-    
+   
 course = [
     types.KeyboardButton("Backend"),
     types.KeyboardButton("Frontend"),
@@ -69,7 +69,7 @@ async def android(message:types.Message):
 @dp.message_handler(text='UX/UI')
 async def uxui(message:types.Message):
     await message.reply("UX/UI - это дизайн сайта или приложения.")
-    
+   
 @dp.message_handler(text="Назад")
 async def back_start(message:types.Message):
     await start(message)
