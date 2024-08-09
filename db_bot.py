@@ -68,3 +68,6 @@ async def not_found(message:Message):
     await message.reply("Я вас не понял")
 
 executor.start_polling(dp, skip_updates=True)
+
+
+
