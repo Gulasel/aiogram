@@ -5,7 +5,7 @@ from logging import basicConfig, INFO
 bot = Bot(token=token)
 dp = Dispatcher(bot)
 basicConfig(level=INFO) # статус нашего кода , терминалга информация чыгарып берет
-()
+
 start_buttons = [
     types.KeyboardButton('О нас'),
     types.KeyboardButton('Курсы'),
